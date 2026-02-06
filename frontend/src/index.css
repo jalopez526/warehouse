@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+@theme {
+  /* Typography */
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+
+  /* Modern Ecommerce Palette (Light Mode) */
+  /* Backgrounds */
+  --color-bg-page: #f9fafb;
+  /* Gray 50 - Main background */
+  --color-bg-surface: #ffffff;
+  /* White - Cards/Panels */
+  --color-bg-subtle: #f3f4f6;
+  /* Gray 100 - Hover states/Secondary backgrounds */
+
+  /* Borders */
+  --color-border-subtle: #e5e7eb;
+  /* Gray 200 */
+  --color-border-med: #d1d5db;
+  /* Gray 300 */
+  --color-border-focus: #4f46e5;
+  /* Indigo 600 - Focus rings */
+
+  /* Text */
+  --color-text-primary: #111827;
+  /* Gray 900 - Headings/Body */
+  --color-text-secondary: #4b5563;
+  /* Gray 600 - Accents/Meta */
+  --color-text-muted: #9ca3af;
+  /* Gray 400 - Placeholders */
+  --color-text-on-dark: #ffffff;
+
+  /* Brand / Accents */
+  --color-brand-primary: #4f46e5;
+  /* Indigo 600 - Primary actions */
+  --color-brand-secondary: #0ea5e9;
+  /* Sky 500 - Information */
+
+  /* Status Colors (Soft Pastels) */
+  --color-status-success-bg: #ecfdf5;
+  /* Emerald 50 */
+  --color-status-success-text: #047857;
+  /* Emerald 700 */
+  --color-status-warning-bg: #fffbeb;
+  /* Amber 50 */
+  --color-status-warning-text: #b45309;
+  /* Amber 700 */
+  --color-status-error-bg: #fef2f2;
+  /* Red 50 */
+  --color-status-error-text: #b91c1c;
+  /* Red 700 */
+  --color-status-info-bg: #f0f9ff;
+  /* Sky 50 */
+  --color-status-info-text: #0369a1;
+  /* Sky 700 */
+
+  /* Shadows */
+  --shadow-soft-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-soft-md: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --shadow-soft-lg: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+}
+
+/* Global Atmosphere */
+body {
+  background-color: var(--color-bg-page);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar Customization - Minimalist */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-subtle);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border-med);
+}
+
+/* Utilities */
+.card-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-shine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(105deg, transparent 40%, rgba(255, 255, 255, 0.4) 45%, rgba(255, 255, 255, 0.2) 50%, transparent 54%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  pointer-events: none;
+  transition: background-position 0s;
+}
+
+.card-shine:hover::after {
+  background-position: -20% 0;
+  transition: background-position 0.6s ease-in-out;
+}
